@@ -3,6 +3,5 @@
         @include('dashboard.partials.yearbook2025')
         @include('dashboard.partials.prodi')
         @include('dashboard.partials.foto_galeri')
-        {{-- @include('dashboard.partials.message') --}}
     </div>
 </x-layouts.app>
