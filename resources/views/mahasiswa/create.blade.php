@@ -41,7 +41,7 @@
         }
 
         .form-container {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #ffffff 100%);
             min-height: 100vh;
             padding: 40px 0;
             animation: fadeInUp 0.6s ease-out;
