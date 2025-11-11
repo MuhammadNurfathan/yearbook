@@ -60,14 +60,17 @@ DB_PORT=3306
 DB_DATABASE=yearbook_lp3i
 DB_USERNAME=root
 DB_PASSWORD=
+
 4️⃣ Generate Key Aplikasi
 bash
 Copy code
 php artisan key:generate
+
 5️⃣ Migrasi Database
 bash
 Copy code
 php artisan migrate --seed
+
 6️⃣ Jalankan Server
 bash
 Copy code
