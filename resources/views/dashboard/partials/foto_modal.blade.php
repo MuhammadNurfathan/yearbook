@@ -1,15 +1,15 @@
-<!-- Modal Preview Full Blur Responsive -->
+<!-- Modal Preview (Full Flexible, No Separate Alpine Instance) -->
 <template x-if="open">
     <div 
         x-show="open"
         x-transition.opacity.duration.300ms
         x-cloak
-        class="fixed inset-0 bg-black/50 backdrop-blur-xl flex items-center justify-center z-50"
+        class="fixed inset-0 flex items-center justify-center bg-black/60 backdrop-blur-xl p-4 sm:p-6 overflow-y-auto z-[9999]"
         @click.self="open = false"
     >
         <!-- Modal Box -->
         <div 
-            class="relative w-full max-w-3xl mx-4 sm:mx-6 md:mx-auto transform transition-all duration-300"
+            class="relative w-full max-w-5xl transform transition-all duration-300"
             x-transition:enter="ease-out duration-300"
             x-transition:enter-start="opacity-0 scale-90"
             x-transition:enter-end="opacity-100 scale-100"
@@ -17,46 +17,21 @@
             x-transition:leave-start="opacity-100 scale-100"
             x-transition:leave-end="opacity-0 scale-90"
         >
-            <!-- Close Button -->
+            <!-- Tombol Tutup -->
             <button 
                 @click="open = false"
-                class="absolute -top-4 -right-4 bg-white rounded-full p-3 shadow-lg hover:bg-gray-200 transition"
+                class="absolute -top-6 -right-6 bg-white text-gray-700 rounded-full p-3 shadow-lg hover:bg-gray-200 transition"
+                aria-label="Tutup"
             >
                 ✕
             </button>
 
-            <!-- Image -->
+            <!-- Gambar -->
             <img 
                 :src="selectedImage" 
                 alt="Preview" 
-                class="w-auto max-w-full max-h-[80vh] mx-auto rounded-xl shadow-xl object-contain"
+                class="w-auto max-w-full max-h-[90vh] mx-auto rounded-xl shadow-2xl object-contain bg-white"
             >
         </div>
     </div>
 </template>
-
-<!-- Trigger Example -->
-<div class="grid grid-cols-3 gap-4">
-    <template x-for="img in images" :key="img">
-        <img 
-            :src="img" 
-            alt="" 
-            class="cursor-pointer rounded-lg shadow hover:scale-105 transition-transform duration-200"
-            @click="selectedImage = img; open = true"
-        >
-    </template>
-</div>
-
-<script>
-    document.addEventListener('alpine:init', () => {
-        Alpine.data('modalPreview', () => ({
-            open: false,
-            selectedImage: '',
-            images: [
-                'https://picsum.photos/400/600?random=1', // portrait
-                'https://picsum.photos/600/400?random=2', // landscape
-                'https://picsum.photos/500/500?random=3', // square
-            ],
-        }))
-    })
-</script>

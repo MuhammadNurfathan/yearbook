@@ -71,9 +71,7 @@ document.addEventListener('DOMContentLoaded', async () => {
                             onerror="this.src='storage/images/prodi/default.jpg'"
                             class="w-full h-full object-cover transition-transform duration-500 hover:scale-105 fade-in"
                         >
-                        <div class="absolute top-4 right-4 w-12 h-12 bg-white/70 rounded-xl flex items-center justify-center">
-                            <span class="text-2xl"></span>
-                        </div>
+                        
                     </div>
 
                     <div class="p-6">
